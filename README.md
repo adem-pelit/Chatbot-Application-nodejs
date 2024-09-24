@@ -31,4 +31,7 @@ This project aims to develop a chatbot application that can interact with users 
    npm run dev
 
 ## Preview
+
+Upon accessing the application, users are greeted by a chatbox, with an input section at the bottom for responding to questions managed by the server. Once all questions have been answered, a thank-you message appears, the responses are saved in the database, and the page automatically reloads. If users wish to restart the conversation at any point, they can do so by clicking the "Finish Conversation" button located in the navbar.
+
 ![image](https://github.com/user-attachments/assets/916914cb-437b-477b-a4d1-4077343cecf6)
