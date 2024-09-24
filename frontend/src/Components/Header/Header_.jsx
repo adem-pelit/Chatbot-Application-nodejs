@@ -3,7 +3,7 @@ import { Layout, Menu } from 'antd';
 import { backendApi } from '../../api/backendApi';
 const { Header, } = Layout;
 
-const items = ["Finish converation"].map((element, index) => ({
+const items = ["Finish conversation"].map((element, index) => ({
     key: index,
     label: element,
 }));
