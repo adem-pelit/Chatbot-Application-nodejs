@@ -4,7 +4,6 @@ var backendApi = {
     session: {
         get() {
             return fetch(`${baseUrl}/session/current`, {
-                
                 method:"GET",
                 credentials: 'include'
             }).then(res => res.json())

@@ -4,9 +4,7 @@ import Session from "../models/Session.model.js";
 
 const GetCurrentSession = async (req, res) => {
     req.session.ok = true;
-    console.log("req.session.id", req.session.id)
     var currentSession = await Session.findOne({ id: req.session.id })
-    console.log("currentSession", currentSession)
     if (currentSession == null) {
         try {
             var newSession = new Session({
