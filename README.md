@@ -4,9 +4,85 @@ This project aims to develop a chatbot application that can interact with users 
 
 ## Technologies
 
-- **Frontend**: ReactJS
-- **Backend**: ExpressJS
+- **Frontend**: ReactJS[ antdesign ]
+- **Backend**: ExpressJS [ cors, dotenv, express-session, mongoose ]
 - **Database**: MongoDB
+
+## Session API
+
+### 1. Get Current Session
+- **Endpoint:** `GET /session/current`
+- **Description:** Retrieves the current session information of the user based on the session ID.
+- **Response:**
+  - **200 OK**
+    ```json
+    {
+    "data": {
+        "_id": "66f3510d74abefb93add7d7d",
+        "id": "VQ99y0tfJwrNlcP-05v9Us_nWd78M-EB",
+        "messages": [
+            {
+                "from": "bot",
+                "message": "What is your favorite breed of cat, and why?",
+                "_id": "66f3510d74abefb93add7d7e"
+            }
+        ],
+        "startTime": "2024-09-24T23:53:49.928Z",
+        "__v": 0
+       }
+      }
+    ```
+
+### 2. Get All Sessions
+- **Endpoint:** `GET /session`
+- **Description:** Retrieves all session informations. 
+- **Response:**
+  - **200 OK**
+    ```json
+    {
+    "sessions": [{
+        "_id": "66f3510d74abefb93add7d7d",
+        "id": "VQ99y0tfJwrNlcP-05v9Us_nWd78M-EB",
+        "messages": [
+            {
+                "from": "bot",
+                "message": "What is your favorite breed of cat, and why?",
+                "_id": "66f3510d74abefb93add7d7e"
+            }
+        ],
+        "startTime": "2024-09-24T23:53:49.928Z",
+        "__v": 0
+       }]
+      }
+    ```
+
+### 3. Send Message
+- **Endpoint:** `POST /send-message`
+- **Description:** This endpoint let user to send message to his/her current session. 
+- **Request Body:**
+    ```json
+    {
+      "message": "string"
+    }
+    ```
+- **Response:**
+  - **201 Created**
+    ```json
+    {
+      "ok": true,
+    }
+    ```
+
+### 4. Logout Session
+- **Endpoint:** `GET /logout`
+- **Description:** This endpoint updates the session ending time information and terminates the user's current session.
+- **Response:**
+  - **200 OK**
+    ```json
+    {
+      "ok": true,
+    }
+    ```
 
 ## Installation
 
